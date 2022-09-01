@@ -1,4 +1,4 @@
-# TableTennis_ReservationSite
+# 卓球予約サイト
 
 ## サイト概要
 ### サイトテーマ
