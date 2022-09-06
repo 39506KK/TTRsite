@@ -13,7 +13,10 @@
  *= require_tree .
  *= require_self
  */
+<<<<<<< HEAD
  
 body {
   background-image: image-url("hoge.jpg");
 }
+=======
+>>>>>>> refs/remotes/origin/develop

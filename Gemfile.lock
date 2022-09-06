@@ -62,9 +62,19 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
+<<<<<<< HEAD
     bindex (0.8.1)
     bootsnap (1.13.0)
       msgpack (~> 1.2)
+=======
+    bcrypt (3.1.18)
+    bindex (0.8.1)
+    bootsnap (1.13.0)
+      msgpack (~> 1.2)
+    bootstrap4-kaminari-views (1.0.1)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
+>>>>>>> refs/remotes/origin/develop
     builder (3.2.4)
     byebug (11.1.3)
     capybara (3.37.1)
@@ -79,6 +89,17 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
+<<<<<<< HEAD
+=======
+    devise (4.8.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
+    devise-i18n (1.10.2)
+      devise (>= 4.8.0)
+>>>>>>> refs/remotes/origin/develop
     digest (3.1.0)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
@@ -93,6 +114,21 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+<<<<<<< HEAD
+=======
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-core (1.2.2)
+>>>>>>> refs/remotes/origin/develop
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -107,7 +143,10 @@ GEM
     mini_mime (1.1.2)
     minitest (5.16.3)
     msgpack (1.5.6)
+<<<<<<< HEAD
     mysql2 (0.5.4)
+=======
+>>>>>>> refs/remotes/origin/develop
     net-imap (0.2.3)
       digest
       net-protocol
@@ -125,8 +164,15 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.8-x86_64-linux)
       racc (~> 1.4)
+<<<<<<< HEAD
     public_suffix (5.0.0)
     puma (3.12.6)
+=======
+    orm_adapter (0.5.0)
+    public_suffix (5.0.0)
+    puma (5.6.5)
+      nio4r (~> 2.0)
+>>>>>>> refs/remotes/origin/develop
     racc (1.6.0)
     rack (2.2.4)
     rack-mini-profiler (2.3.4)
@@ -166,6 +212,12 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.5.0)
+<<<<<<< HEAD
+=======
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
+>>>>>>> refs/remotes/origin/develop
     rexml (3.2.5)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
@@ -202,6 +254,11 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
+<<<<<<< HEAD
+=======
+    warden (1.2.9)
+      rack (>= 2.0.9)
+>>>>>>> refs/remotes/origin/develop
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -229,6 +286,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.4)
+<<<<<<< HEAD
   byebug
   capybara (>= 3.26)
   dotenv-rails
@@ -239,6 +297,21 @@ DEPENDENCIES
   net-pop
   net-smtp
   puma (~> 3.11)
+=======
+  bootstrap4-kaminari-views
+  byebug
+  capybara (>= 3.26)
+  devise
+  devise-i18n
+  dotenv-rails
+  jbuilder (~> 2.7)
+  kaminari
+  listen (~> 3.3)
+  net-imap
+  net-pop
+  net-smtp
+  puma (~> 5.0)
+>>>>>>> refs/remotes/origin/develop
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.6, >= 6.1.6.1)
   sass-rails (>= 6)

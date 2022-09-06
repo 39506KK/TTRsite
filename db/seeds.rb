@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+<<<<<<< HEAD
+=======
+
+#管理者用ログイン情報
+Admin.create!(
+    email: 'admin@admin.com',
+    password: '123456',
+)
+>>>>>>> refs/remotes/origin/develop
