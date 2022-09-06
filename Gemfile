@@ -8,11 +8,7 @@ gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
-<<<<<<< HEAD
 gem 'puma', '~> 3.11'
-=======
-gem 'puma', '~> 5.0'
->>>>>>> refs/remotes/origin/develop
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -60,22 +56,13 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'dotenv-rails'
-<<<<<<< HEAD
-group :production do
-  gem 'mysql2'
-end
-=======
 # group :production do
 #   gem 'mysql2'
 # end
->>>>>>> refs/remotes/origin/develop
 
 gem "net-smtp"
 gem "net-pop"
 gem "net-imap"
-<<<<<<< HEAD
-=======
 gem 'devise'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
->>>>>>> refs/remotes/origin/develop
