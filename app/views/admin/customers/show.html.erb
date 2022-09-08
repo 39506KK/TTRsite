@@ -1,0 +1,54 @@
+<div class='container px-5 px-sm-0'>
+  <h2 class="mt-4 mr-5">
+    <span style="background-color:#eee">
+        <strong>
+          <%= @customer.last_name %>
+          <%= @customer.first_name %>
+        </strong>さんの
+        <strong>会員詳細</strong>
+        </span>
+      </h2>
+  <div class='row'>
+    
+    <div class='col-md-5'>
+      <table class="table table-borderless">
+        <tr>
+          <th>会員ID</th>
+          <td><%= @customer.id %></td>
+        </tr>
+        <tr>
+          <th>氏名</th>
+          <td>
+            <%= @customer.last_name %>
+            <%= @customer.first_name %>
+          </td>
+        </tr>
+        <tr>
+          <th>フリガナ</th>
+          <td>
+            <%= @customer.last_kana %>
+            <%= @customer.first_kana %>
+          </td>
+        </tr>
+        <tr>
+          <th>電話番号</th>  
+          <td><%= @customer.tell %></td>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <td><%= @customer.email %></td>
+        </tr>
+        <tr>
+          <th>会員ステータス</th>
+          <% if @customer.is_deleted %>
+            <td class="text-secondary">退会</td>
+          <% else %>
+            <td class="text-success">有効</td>
+          <% end %>
+        </tr>
+      </table>
+      <%= link_to "編集する", edit_admin_customer_path(@customer.id), class: "btn btn-md btn-success ml-5" %>
+      <%= link_to "会員一覧に戻る", admin_root_path, class: "btn btn-md btn-primary ml-5" %>
+    </div>
+  </div>
+</div>
