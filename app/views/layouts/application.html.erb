@@ -23,7 +23,7 @@
                 <h5 class="ml-5">ようこそ、<%= current_customer.last_name %>さん!</h5>
 
                 <ul class="navbar-nav ml-auto">
-                  <li class ="rounded border border-dark mr-5">マイページ</li>
+                  <li class ="rounded border border-dark mr-5"><%= link_to "マイページ", public_customer_path(current_customer.id), class: 'nav-link text-dark' %></li>
                   <li class ="rounded border border-dark mr-5">予約はこちら</li>
                   <li class ="rounded border border-dark mr-5"><%= link_to "ログアウト",  destroy_customer_session_path, method: :delete, class: 'nav-link text-dark' %></li>
                 </ul>

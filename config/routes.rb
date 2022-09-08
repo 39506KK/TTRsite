@@ -15,7 +15,11 @@ Rails.application.routes.draw do
   
   root to: "public/homes#top"
   namespace :public do
-    get 'about'=>"homes#about"
+    get 'about' => 'homes#about'
+    patch 'customers/withdrawal/:id', to: 'customers#withdrawal', as: 'customers/withdrawal'
+    get 'orders/complete', to: 'orders#complete'
+    get 'customers/quit', to: 'customers#quit'
+    resources :customers, only:[:show, :edit, :update, :quit]
   end
   
   namespace :admin do
