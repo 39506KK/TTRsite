@@ -37,16 +37,63 @@
 </div>
 
 <div class="container">
-
-    <div class="row mt-3">
-      <div class="col-md-2">
-        <h5><strong>予約履歴</strong>
+  <div class="row">
+    <div class="col-12 mt-3 text-center content">
+      <div class="col-12 mt-3 text-center mx-auto">
+        <h3>予約一覧</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">予約日</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @customer_reserves.each do |customer_reserve| %>
+              <td>
+                <%= customer_reserve.day %>
+                <%= customer_reserve.time %>              
+              </td>
+              <td>
+                <%= link_to '削除', reserve_path(customer_reserve.id), method: :delete, data: { confirm: "削除してよろしいですか？", commit: "削除する", cancel: "やめる", title: "ご確認ください" } %>
+              </td>
+            </tr>             
+            <% end %>
+            <% if @customer_reserves.blank? %>
+              <tr>
+                <td>予約はありません。</td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
-      <div class="col-md-3">
-        <%#= link_to "一覧を見る", public_orders_path, class:"btn btn-primary"%></h5>
+      <div class="col-12 mt-3 text-center mx-auto">
+        <h3>来院履歴</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">予約日</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @visit_historys.each do |visit_history| %>
+              <tr>
+                <td>
+                  <%= visit_history.day %>
+                  <%= visit_history.time %>              
+                </td>
+              </tr>
+            <% end %>
+            <% if @visit_historys.blank? %>
+              <tr>
+                <td>来院履歴はありません。</td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
     </div>
-
+  </div>
 </div>
 
 

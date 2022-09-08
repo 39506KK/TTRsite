@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     get 'orders/complete', to: 'orders#complete'
     get 'customers/quit', to: 'customers#quit'
     resources :customers, only:[:show, :edit, :update, :quit]
+    resources :reserves, only:[:index, :new, :show]
   end
   
   namespace :admin do

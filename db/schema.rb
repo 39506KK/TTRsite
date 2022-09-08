@@ -30,11 +30,11 @@ ActiveRecord::Schema.define(version: 2022_09_08_072411) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "last_name"
-    t.string "first_name"
-    t.string "last_kana"
-    t.string "first_kana"
-    t.string "tell"
+    t.string "last_name", null: false
+    t.string "first_name", null: false
+    t.string "last_kana", null: false
+    t.string "first_kana", null: false
+    t.string "tell", null: false
     t.boolean "is_deleted", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -43,8 +43,13 @@ ActiveRecord::Schema.define(version: 2022_09_08_072411) do
   end
 
   create_table "reserves", force: :cascade do |t|
+    t.date "day", null: false
+    t.string "time", null: false
+    t.bigint "customer_id", null: false
+    t.datetime "start_time", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_reserve_on_customer_id"
   end
 
 end
