@@ -63,6 +63,17 @@ gem 'dotenv-rails'
 gem "net-smtp"
 gem "net-pop"
 gem "net-imap"
+
+# ログイン機能
 gem 'devise'
+
+# 日本語化
+gem 'rails-i18n', '~> 6.0'
+gem 'devise-i18n'
+
+# Bootstrap
+gem 'devise-bootstrap-views', '~> 1.0'
+
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
+gem 'simple_calendar', '~> 2.0'
