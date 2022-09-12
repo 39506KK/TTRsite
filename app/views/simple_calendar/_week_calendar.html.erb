@@ -2,9 +2,9 @@
   <div class="calendar-heading">
     <%= link_to t('simple_calendar.previous', default: '前週'), calendar.url_for_previous_view %>
     <% if calendar.number_of_weeks == 1 %>
-      <span class="calendar-title"><%= t('simple_calendar.week', default: '1週間') %></span>
+      <span class="calendar-title"><%= t('simple_calendar.week', default: ' 今週 ') %></span>
     <% else %>
-      <span class="calendar-title"><%= t('simple_calendar.week', default: '1週間') %></span>
+      <span class="calendar-title"><%= t('simple_calendar.week', default: ' 今週 ') %></span>
     <% end %>
     <%= link_to t('simple_calendar.next', default: '翌週'), calendar.url_for_next_view %>
     <% reserves = Reserve.reserves_after_three_month %>
@@ -17,11 +17,12 @@
           <th><%= t('date.abbr_day_names')[day.wday] %></th>
         <% end %>
       </tr>
+      
     </thead>
     <tbody>
       <% date_range.each_slice(7) do |week| %>
         <tr>
-          <td><%= t('date.month_names')[start_date.month] %></td>
+          <td><%#= t('date.month_names')[start_date.month] %></td>
           <% week.each do |day| %>
             <%= content_tag :td, class: calendar.td_classes_for(day) do %>
               <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block) %>
@@ -40,7 +41,7 @@
                 <% if check_reserve(reserves, day, time) %>
                   <%= '×' %>
                 <% else %>
-                  <%= link_to new_public_reserf_path(day: day, time: time) do %>
+                  <%= link_to new_public_reserve_path(day: day, time: time) do %>
                     <%= '○' %>
                   <% end %>
                 <% end %>

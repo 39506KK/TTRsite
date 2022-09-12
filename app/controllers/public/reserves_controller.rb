@@ -11,7 +11,7 @@ class Public::ReservesController < ApplicationController
     @start_time = DateTime.parse(@day + " " + @time + " " + "JST")
     message = Reserve.check_reserve_day(@day.to_date)
     if !!message
-      redirect_to @reserve, flash: { alert: message }
+      redirect_to public_reserves_path, flash: { alert: message }
     end
   end
 
@@ -29,9 +29,9 @@ class Public::ReservesController < ApplicationController
   end
 
   def destroy
-    @reserve = reserve.find(params[:id])
+    @reserve = Reserve.find(params[:id])
     if @reserve.destroy
-      redirect_to customer_path(current_customer.id), flash: { success: "予約を削除しました" }
+      redirect_to public_customer_path(current_customer.id), flash: { success: "予約を削除しました" }
     else
       render :show, flash: { error: "予約の削除に失敗しました" }
     end

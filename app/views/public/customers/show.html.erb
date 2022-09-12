@@ -45,7 +45,6 @@
           <thead>
             <tr>
               <th scope="col">予約日</th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -55,7 +54,7 @@
                 <%= customer_reserve.time %>              
               </td>
               <td>
-                <%= link_to '削除', reserve_path(customer_reserve.id), method: :delete, data: { confirm: "削除してよろしいですか？", commit: "削除する", cancel: "やめる", title: "ご確認ください" } %>
+                <%= link_to '削除', public_reserve_path(customer_reserve.id), method: :delete, data: { confirm: "削除してよろしいですか？", commit: "削除する", cancel: "やめる", title: "ご確認ください" } %>
               </td>
             </tr>             
             <% end %>
@@ -68,7 +67,7 @@
         </table>
       </div>
       <div class="col-12 mt-3 text-center mx-auto">
-        <h3>来院履歴</h3>
+        <h3>予約履歴</h3>
         <table class="table">
           <thead>
             <tr>
@@ -86,7 +85,7 @@
             <% end %>
             <% if @visit_historys.blank? %>
               <tr>
-                <td>来院履歴はありません。</td>
+                <td>予約履歴はありません。</td>
               </tr>
             <% end %>
           </tbody>

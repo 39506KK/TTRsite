@@ -1,7 +1,7 @@
 class Public::CustomersController < ApplicationController
   
   def show
-    @customer =Customer.find(params[:id])
+    @customer = Customer.find(params[:id])
     @customer = current_customer
     @customer_reserves = current_customer.reserves.where("day >= ?", Date.current).order(day: :desc)
     @visit_historys = current_customer.reserves.where("day < ?", Date.current).where("day > ?", Date.today << 12).order(day: :desc)
