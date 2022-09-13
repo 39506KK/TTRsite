@@ -1,6 +1,6 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
-    <div class='col-md-8'>
+    <div class='col-md-10'>
       <h2 class="mt-4">
         <span>会員一覧</span>
       </h2>
@@ -10,8 +10,10 @@
           <tr class="bg-light">
             <th>会員ID</th>
             <th>氏名</th>
+            <th>フリガナ</th>
+            <th>電話番号</th>
             <th>メールアドレス</th>
-            <th>ステータス</th>
+            <th>退会状況</th>
           </tr>
         </thead>
         <tbody>
@@ -24,6 +26,11 @@
                   <%= customers.first_name %>
                 <% end %>
               </td></u>
+              <td>
+                <%= customers.last_kana %>
+                <%= customers.first_kana %>
+              </td>
+              <td><%= customers.tell %></td>
               <td><%= customers.email %></td>
               <% if customers.is_deleted %>
                 <td class="text-secondary">退会</td>

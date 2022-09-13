@@ -2,8 +2,12 @@
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
 body {
-  background-color:#F3F6FC;
+  // background-color: red;
+  background-image: image-url("/images/02.jpg");
+  background-size: cover;
+  background-attachment: fixed;
 }
+
 
 .footerFixed{
   min-height: 100vh; /* コンテンツの高さの最小値＝ブラウザの高さに指定 */
@@ -18,7 +22,7 @@ footer{
   bottom: 0;
   
   /* 以下 背景色やテキストカラーなどはお好みで指定してください */
-  background: #1d1b3f;
-  color: #fff;
+  /* background: #1d1b3f; */
+  /* color: #fff; */
   text-align: center;
 }

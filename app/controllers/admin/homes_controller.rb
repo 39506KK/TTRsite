@@ -6,8 +6,6 @@ class Admin::HomesController < ApplicationController
     @customer = Customer.page(params[:page]).per(10)
   end
   
-  
-  
   private
   
   def customer_params
