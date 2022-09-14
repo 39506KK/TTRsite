@@ -1,62 +1,67 @@
 <div class="container">
-    <div class="row">
-      <div class="text-center p-5">
-        <h4 style="background-color:whitesmoke; width:150px">マイページ</h4>
-      </div>
+  <div class="row">
+    <div class="text-center p-5">
+      <h1>マイページ</h1>
     </div>
-
-    <div class="row-md-2">
-       <h5><strong>登録情報</strong>
-        <%= link_to  "編集する", edit_public_customer_path(current_customer), class:"btn btn-success" %></h5>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row-mt-4">
-        <table border="1" cellpadding="10" width="40%">
-          <tr>
-          <th bgcolor="whitesmoke">氏名</th>
-          <td><%= @customer.last_name %>
-          <%= @customer.first_name %></td>
-          </tr>
-          <tr>
-          <th bgcolor="whitesmoke">カナ</th>
-          <td><%= @customer.last_kana %>
-          <%= @customer.first_kana %></td>
-          </tr>
-          <tr>
-          <th bgcolor="whitesmoke">電話番号</th>
-          <td><%= @customer.tell %></td>
-          </tr>
-          <tr>
-          <th bgcolor="whitesmoke">メールアドレス</th>
-          <td><%= @customer.email %></td>
-          </tr>
-        </table>
-    </div>
+  </div>
 </div>
 
 <div class="container">
   <div class="row">
     <div class="col-12 mt-3 text-center content">
+      <div class="col-12 text-center mx-auto">
+        <h3>
+          登録情報
+          <%= link_to  "編集する", edit_public_customer_path(current_customer), class:"btn btn-success" %>
+        </h3>
+        <table class="table">
+          <tr>
+          <th>氏名</th>
+          <td><%= @customer.last_name %>
+          <%= @customer.first_name %></td>
+          </tr>
+          <tr>
+          <th>カナ</th>
+          <td><%= @customer.last_kana %>
+          <%= @customer.first_kana %></td>
+          </tr>
+          <tr>
+          <th>電話番号</th>
+          <td><%= @customer.tell %></td>
+          </tr>
+          <tr>
+          <th>メールアドレス</th>
+          <td><%= @customer.email %></td>
+          </tr>
+      </table>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-5 text-center content">
       <div class="col-12 mt-3 text-center mx-auto">
         <h3>予約一覧</h3>
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">予約日</th>
+              <th>予約日</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             <% @customer_reserves.each do |customer_reserve| %>
-              <td>
-                <%= customer_reserve.day %>
-                <%= customer_reserve.time %>              
-              </td>
-              <td>
-                <%= link_to '削除', public_reserve_path(customer_reserve.id), method: :delete, data: { confirm: "削除してよろしいですか？", commit: "削除する", cancel: "やめる", title: "ご確認ください" } %>
-              </td>
-            </tr>             
+              <tr>
+                <td>
+                  <%= customer_reserve.day %>
+                  <%= customer_reserve.time %>              
+                </td>
+                <td>
+                  <%= link_to '削除', public_reserve_path(customer_reserve.id), method: :delete, data: { confirm: "削除してよろしいですか？", commit: "削除する", cancel: "やめる", title: "ご確認ください" } %>
+                </td>
+              </tr>             
             <% end %>
             <% if @customer_reserves.blank? %>
               <tr>
@@ -66,12 +71,12 @@
           </tbody>
         </table>
       </div>
-      <div class="col-12 mt-3 text-center mx-auto">
+      <div class="col-12 mt-5 text-center mx-auto">
         <h3>予約履歴</h3>
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">予約日</th>
+              <th>予約日</th>
             </tr>
           </thead>
           <tbody>

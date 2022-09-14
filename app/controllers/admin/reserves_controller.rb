@@ -1,15 +1,15 @@
-class Admin::CustomersController < ApplicationController
+class Admin::ReservesController < ApplicationController
   before_action :authenticate_admin!
   
   def index
     @customers = Customer.all
     @customer = Customer.page(params[:page]).per(10)
   end
-  
+
   def show
     @customer = Customer.find(params[:id])
   end
-  
+
   def edit
     @customer = Customer.find(params[:id])
   end
@@ -24,9 +24,12 @@ class Admin::CustomersController < ApplicationController
   end
   
   private
+  def reserve_params
+    params.require(:reserve).permit(:day, :time, :customer_id, :start_time)
+  end
   
   def customer_params
-    params.require(:customer).permit(:last_name, :first_name, :last_kana, :first_kana, :tell, :email, :is_deleted)
+    params.require(:customer).permit(:last_name, :first_name, :last_kana, :first_kana, :tell, :email)
   end
   
 end

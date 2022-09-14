@@ -32,7 +32,7 @@ class Reserve < ApplicationRecord
     # DBアクセスを減らすために必要なデータを配列に入れている
     reserves.each do |reserve|
       reserves_hash = {}
-      reserves_hash.merge!(day: reserve.day.strftime("%Y-%m-%d"), time: reserve.time, name: reserve.user.name, id:reserve.id)
+      reserves_hash.merge!(day: reserve.day.strftime("%Y-%m-%d"), time: reserve.time, name: reserve.customer.last_name, id:reserve.id)
       reserve_data.push(reserves_hash)
     end
     reserve_data

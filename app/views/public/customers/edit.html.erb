@@ -1,53 +1,48 @@
-<div class="col-md-10"  style="margin-left: 8vh"></br>
-  <h3 class="p-3"><span class="px-3" style="background-color:#EEEEEE">会員情報編集</h3>
-
-   <%= form_with model: @customer, url: public_customer_path do |f| %>
-     <table class="table table-borderless align-middle" style="margin-bottom: 10vh">
-       <tbody>
-         <tr>
-           <td style="width :20%">氏名</td>
-           </td>
-           <td style="width :25%">
-             <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
-           </td>
-            <td style="width :25%">
-             <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
-           </td>
-           </td>
-         </tr>
-         <tr>
-           <td>フリガナ</td>
-           <td>
-             <%= f.text_field :last_kana, autofocus: true, autocomplete: "last_kana" %>
-           </td>   
-           <td>
-             <%= f.text_field :first_kana, autofocus: true, autocomplete: "first_kana" %>
-           </td>
-         </tr>
-         <tr>
-           <td><%= f.label :電話番号 %></td>
-           <td>
-               <%= f.text_field :tell, autofocus: true, autocomplete: "tell" %>
-           </td>   
-           <td></td>
-         </tr>
-         <tr>
-           <td><%= f.label :メールアドレス %></td>
-           <td>
-               <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-           </td>     
-           <td></td>
-         </tr>
-         <tr>
-           <td></td>
-           <td>
-               <%= f.submit "変更内容を保存", class: 'btn btn-success btn-md' %>
-           </td>
-           <td>
-               <%= link_to "退会する", public_customers_quit_path, class: 'btn btn-danger ml-5' %>
-           </td>     
-         </tr>
-       </tbody>
-    </table>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="text-center p-5">
+      <h1>会員情報編集</h1>
+    </div>
+  </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-3 text-center content">
+      <div class="col-12 text-center mx-auto">
+        <%= form_with model: @customer, url: public_customer_path do |f| %>
+          <table class="table" >
+            <tbody>
+              <tr>
+                <td>氏名</td>
+                <td><%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %></td>
+                <td><%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %></td>
+              </tr>
+              <tr>
+                <td>フリガナ</td>
+                <td><%= f.text_field :last_kana, autofocus: true, autocomplete: "last_kana" %></td>   
+                <td><%= f.text_field :first_kana, autofocus: true, autocomplete: "first_kana" %></td>
+              </tr>
+              <tr>
+                <td><%= f.label :電話番号 %></td>
+                <td><%= f.text_field :tell, autofocus: true, autocomplete: "tell" %></td>   
+                <td></td>
+              </tr>
+              <tr>
+                <td><%= f.label :メールアドレス %></td>
+                <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>     
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><%= f.submit "変更内容を保存", class: 'btn btn-success btn-md' %></td>
+                <td><%= link_to "退会する", public_customers_quit_path, class: 'btn btn-danger ml-5' %></td>     
+              </tr>
+            </tbody>
+          </table>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+  
