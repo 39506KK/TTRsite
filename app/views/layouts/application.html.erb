@@ -26,8 +26,9 @@
                   <li class ="rounded border border-dark mr-5"><%= link_to "マイページ", public_customer_path(current_customer.id), class: 'nav-link text-dark' %></li>
                   <li class ="rounded border border-dark mr-5"><%= link_to "はじめてのお客様", public_about_path, class: 'nav-link text-dark' %></li>
                   <li class ="rounded border border-dark mr-5"><%= link_to "ご予約", public_reserves_path, class: 'nav-link text-dark' %></li>
+                  <li class ="rounded border border-dark mr-5"><%= link_to "お問い合わせ", contact_path, class: 'nav-link text-dark' %></li>
+                  <li class ="rounded border border-dark mr-5"><%= link_to "アクセス", maps_path, class: 'nav-link text-dark' %></li>
                   <li class ="rounded border border-dark mr-5"><%= link_to "ログアウト",  destroy_customer_session_path, method: :delete, class: 'nav-link text-dark' %></li>
-                  <li class ="rounded border border-dark mr-5">アクセス</li>
                 </ul>
               <% elsif admin_signed_in? %>
                 <ul class="navbar-nav ml-auto">
@@ -40,8 +41,8 @@
                   <li class ="rounded border border-dark mr-5"><%= link_to "はじめてのお客様", public_about_path, class: 'nav-link text-dark' %></li>
                   <li class ="rounded border border-dark mr-5"><%= link_to "新規登録", new_customer_registration_path, class: 'nav-link text-dark' %></li>
                   <li class ="rounded border border-dark mr-5"><%= link_to "ログイン", new_customer_session_path, class: 'nav-link text-dark' %></li>
-                  <li class ="rounded border border-dark mr-5">お問い合わせ</li>
-                  <li class ="rounded border border-dark mr-5">アクセス</li>
+                  <li class ="rounded border border-dark mr-5"><%= link_to "お問い合わせ", contact_path, class: 'nav-link text-dark' %></li>
+                  <li class ="rounded border border-dark mr-5"><%= link_to "アクセス", maps_path, class: 'nav-link text-dark' %></li>
                 </ul>
               <% end %>
             </div>

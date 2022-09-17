@@ -97,10 +97,14 @@ GEM
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
+    enum_help (0.0.19)
+      activesupport (>= 3.0.0)
     erubi (1.11.0)
     ffi (1.15.5)
+    geocoder (1.8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    gmaps4rails (2.1.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.5)
@@ -272,6 +276,9 @@ DEPENDENCIES
   devise-bootstrap-views (~> 1.0)
   devise-i18n
   dotenv-rails
+  enum_help
+  geocoder
+  gmaps4rails
   jbuilder (~> 2.7)
   kaminari
   listen (~> 3.3)

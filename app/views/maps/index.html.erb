@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>アクセス access</h2>
+  
+  <h4>場所</h4>
+  <p>〒〇〇〇-〇〇〇〇</br>
+     〇〇県〇〇市〇〇123-1</br>
+     TEL.000-00-0000</p>
+    
+  
+  
+  
+  <h3>周辺地図</h3>
+  <div id='map'></div>
+
+    <style>
+      #map{
+        height: 400px;
+      }
+    </style>
+
+    <script>
+      function initMap(){
+        let map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 36.64332, lng: 138.18864},
+        zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
+</div>

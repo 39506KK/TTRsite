@@ -20,8 +20,11 @@ module TTRsite
     # config.eager_load_paths << Rails.root.join("extras")
     
     # 日本語化
+    config.paths.add 'lib', eager_load: true
     config.i18n.default_locale = :ja
-    # タイムゾーンを
+    config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    # タイムゾーンを東京に設定
     config.time_zone = 'Asia/Tokyo'
+    
   end
 end

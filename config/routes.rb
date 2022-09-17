@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
   
-  namespace :admin do
-    get 'reserves/index'
-    get 'reserves/show'
-    get 'reserves/edit'
-  end
   # 管理者用
   # URL /admin/sign_in ...
   devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
@@ -32,10 +27,17 @@ Rails.application.routes.draw do
     root to: "homes#top"
     # resources :items, only:[:index, :new, :create, :show, :edit, :update]
     # resources :genres, only:[:index, :create, :edit, :update]
+    resources :reserves, only:[:index, :show, :edit]
     resources :customers, only:[:index, :show, :edit, :update]
     # resources :orders, only:[:show, :update]
     # resources :order_items, only:[:update]
   end
+  
+  get   'contact', to: 'contacts#index'     # 入力画面
+  post  'contact/confirm', to: 'contacts#confirm'   # 確認画面
+  post  'contact/thanks', to: 'contacts#thanks'    # 送信完了画面
+  
+  resources :maps, only:[:index]
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

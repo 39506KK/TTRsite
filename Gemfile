@@ -55,6 +55,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# 環境変数を.envファイルで使用する
 gem 'dotenv-rails'
 # group :production do
 #   gem 'mysql2'
@@ -69,6 +70,7 @@ gem 'devise'
 
 # 日本語化
 gem 'rails-i18n', '~> 6.0'
+gem 'enum_help'
 gem 'devise-i18n'
 
 # Bootstrap
@@ -77,3 +79,7 @@ gem 'devise-bootstrap-views', '~> 1.0'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'simple_calendar', '~> 2.0'
+
+# 住所から緯度と経度を変換する
+gem "geocoder"
+gem 'gmaps4rails'

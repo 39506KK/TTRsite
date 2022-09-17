@@ -1,0 +1,42 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12 col-lg-6 offset-lg-3">
+      <h2>お問い合わせ</h2>
+
+      <%= form_with model: @contact, url: contact_confirm_path, local: true do |f| %>
+        <% if @contact.errors.any? %>
+          <div class="alert alert-danger" role="alert">
+            <h5><strong>入力内容にエラーがあります。</strong></h5>
+              <ul>
+                <% @contact.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label :name, '名前' %>
+          <span class="badge badge-info rounded-0">必須</span>
+          <%= f.text_field :name, id: 'name', class: 'form-control', :placeholder => '名前' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email, 'メールアドレス' %>
+          <span class="badge badge-info rounded-0">必須</span>
+          <small class="text-muted">例：user@example.com</small>
+          <%= f.text_field :email, id: 'email', class: 'form-control', :placeholder => 'メールアドレス' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :message, 'お問い合わせ内容' %>
+          <span class="badge badge-info rounded-0">必須</span>
+          <small class="text-muted">パスワードなどの機密情報を含めないでください。</small>
+          <%= f.text_area :message, id: 'message', class: 'form-control', :placeholder => 'お問い合わせ内容', :rows => '5' %>
+        </div>
+        <div class="float-right">
+          <%= f.submit '確認', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+      
+    </div>  
+  </div>  
+</div>
