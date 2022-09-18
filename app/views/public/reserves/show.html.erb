@@ -4,6 +4,9 @@
       <h1>予約詳細画面</h1>
     </div>
     <div class="col-12 mt-3 text-center content">
+      <div class="pb-2 text-center">
+        <h4>予約が完了しました。</h4>
+      </div>
       <div>
         <label><strong>日付：</strong></label>
         <p style="display:inline;"><%= @reserve.day %></p>
@@ -13,7 +16,7 @@
         <p style="display:inline;"><%= @reserve.time %></p>
       </div>
     </div>
-    <div class="col-12 text-right">
+    <div class="col-10 text-right">
       <%= link_to '予約画面に戻る', public_reserves_path %>
     </div>
   </div>
