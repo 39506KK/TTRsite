@@ -13,24 +13,26 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
   
+  devise_scope :customer do
+    post 'customers/sign_up/confirm', to: 'public/registrations#confirm'
+    post 'customers/sign_up/complete', to: 'public/registrations#complete'
+  end
+  
   root to: "public/homes#top"
+  get 'about' => 'homes#about'
   namespace :public do
-    get 'about' => 'homes#about'
+    #post 'customers/sign_up/confirm', to: 'registrations#confirm'
+    #get 'customers/sign_up/complete', to: 'registrations#complete'
     patch 'customers/withdrawal/:id', to: 'customers#withdrawal', as: 'customers/withdrawal'
-    get 'orders/complete', to: 'orders#complete'
     get 'customers/quit', to: 'customers#quit'
     resources :customers, only:[:show, :edit, :update, :quit]
-    resources :reserves#, only:[:index, :new, :show]
+    resources :reserves, only:[:index, :new, :show]
   end
   
   namespace :admin do
     root to: "homes#top"
-    # resources :items, only:[:index, :new, :create, :show, :edit, :update]
-    # resources :genres, only:[:index, :create, :edit, :update]
     resources :reserves, only:[:index, :show, :edit]
     resources :customers, only:[:index, :show, :edit, :update]
-    # resources :orders, only:[:show, :update]
-    # resources :order_items, only:[:update]
   end
   
   get   'contact', to: 'contacts#index'     # 入力画面
