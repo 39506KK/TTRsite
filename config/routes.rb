@@ -21,8 +21,6 @@ Rails.application.routes.draw do
   root to: "public/homes#top"
   get 'about' => 'homes#about'
   namespace :public do
-    #post 'customers/sign_up/confirm', to: 'registrations#confirm'
-    #get 'customers/sign_up/complete', to: 'registrations#complete'
     patch 'customers/withdrawal/:id', to: 'customers#withdrawal', as: 'customers/withdrawal'
     get 'customers/quit', to: 'customers#quit'
     resources :customers, only:[:show, :edit, :update, :quit]
