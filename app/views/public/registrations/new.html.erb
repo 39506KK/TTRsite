@@ -6,21 +6,21 @@
           <%= render "public/shared/error_messages", resource: resource %>
           <div class="row mt-5 mb-4">
             <div class="col-md-6">
-              <%= f.label :last_name, '姓 *' %>
+              <%= f.label :last_name, '姓' %>
               <%= f.text_field :last_name, class: 'form-control', autofocus: true, autocomplete: "last_name" %>
             </div>
             <div class="col-md-6">
-              <%= f.label :first_name, '名 *' %>
+              <%= f.label :first_name, '名' %>
               <%= f.text_field :first_name,  class: 'form-control', autocomplete: "first_name" %>
             </div>
           </div>
           <div class="row mb-4">
             <div class="col-md-6">
-              <%= f.label :last_kana, 'セイ *' %>
+              <%= f.label :last_kana, 'セイ' %>
               <%= f.text_field :last_kana, class: 'form-control', autocomplete: "last_kana" %>
             </div>
             <div class="col-md-6">
-              <%= f.label :first_kana, 'カナ *' %>
+              <%= f.label :first_kana, 'カナ' %>
               <%= f.text_field :first_kana,  class: 'form-control', autocomplete: "first_kana" %>
             </div>
           </div>

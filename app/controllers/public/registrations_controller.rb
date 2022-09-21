@@ -23,6 +23,11 @@ class Public::RegistrationsController < Devise::RegistrationsController
   
   def confirm
     @customer = Customer.new(sign_up_params)
+    if @customer.invalid?
+      flash.now[:denger] = '入力内容にエラーがあります。'
+      render :new
+      return
+    end
     @password = "*" * @customer.password.length
   end
   
@@ -54,7 +59,7 @@ class Public::RegistrationsController < Devise::RegistrationsController
   # end
   
   def after_sign_up_path_for(resource)
-    public_customers_sign_up_complete_path(resource)
+    customers_sign_up_complete_path(resource)
   end
   
   def after_sign_in_path_for(resource)
@@ -83,7 +88,7 @@ class Public::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up for inactive accounts.
-  # def after_inactive_sign_up_path_for(resource)
+  def after_inactive_sign_up_path_for(resource)
   #   super(resource)
-  # end
+  end
 end

@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
   
   # 管理者用
-  # URL /admin/sign_in ...
-  devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
-    sessions: "admin/sessions"
+  devise_for :admins, skip: [:registrations, :passwords] ,controllers: {
+    sessions: "admins/sessions"
   }
   
+  namespace :admin do
+    root to: "homes#top"
+    resources :reserves, only:[:index, :show, :edit]
+    resources :customers, only:[:index, :show, :edit, :update]
+  end
+  
   # 顧客用
-  # URL /customers/sign_in ...
   devise_for :customers,skip: [:passwords], controllers: {
     registrations: "public/registrations",
     sessions: 'public/sessions'
@@ -15,22 +19,16 @@ Rails.application.routes.draw do
   
   devise_scope :customer do
     post 'customers/sign_up/confirm', to: 'public/registrations#confirm'
-    post 'customers/sign_up/complete', to: 'public/registrations#complete'
+    get 'customers/sign_up/complete', to: 'public/registrations#complete'
   end
   
   root to: "public/homes#top"
-  get 'about' => 'homes#about'
+  get 'about' => 'public/homes#about'
   namespace :public do
     patch 'customers/withdrawal/:id', to: 'customers#withdrawal', as: 'customers/withdrawal'
     get 'customers/quit', to: 'customers#quit'
     resources :customers, only:[:show, :edit, :update, :quit]
     resources :reserves, only:[:index, :new, :show]
-  end
-  
-  namespace :admin do
-    root to: "homes#top"
-    resources :reserves, only:[:index, :show, :edit]
-    resources :customers, only:[:index, :show, :edit, :update]
   end
   
   get   'contact', to: 'contacts#index'     # 入力画面

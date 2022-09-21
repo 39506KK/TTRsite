@@ -2,7 +2,8 @@
   <div class="row">
     <div class="col-md-12 col-lg-7 offset-lg-2">
       <h2>入力情報の確認</h2>
-        <%=form_with model: @customer, url: customers_sign_up_complete_path(resource), local: true do |f| %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%#= form_with model: @customer, url: customers_sign_up_complete_path(resource), local: true do |f| %>
           <table class="table">
             <tr>
               <th>姓</th>
