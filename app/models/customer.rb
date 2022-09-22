@@ -22,4 +22,9 @@ class Customer < ApplicationRecord
             format: { with: /\A[0-9]+\z/i, message: "は数字以外の文字を含めることはできません。" }
   
   has_many :reserves
+  
+  def full_name
+    "#{first_name} #{last_name}" 
+  end
+  
 end

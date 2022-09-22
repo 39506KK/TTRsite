@@ -3,7 +3,6 @@
     <span>予約一覧</span>
   </h2>
   <div class='row'>
-    
     <div class='col-md-8 mt-4'>
       <table class="table text-center">
         <thead>
@@ -11,7 +10,7 @@
             <th>予約日</th>
             <th>予約時間</th>
             <th>予約者</th>
-            <th>注文ステータス</th>
+            <th>電話番号</th>
           </tr>
         </thead>
         <tbody>
@@ -19,8 +18,8 @@
           <tr>
             <td><%= f.day %></td>
             <td><%= f.time %></td>
-            <td><%= f.customer_id %></td>
-            <td><%#= reserve.status_i18n %></td>
+            <td><%= f.customer.full_name %></td>
+            <td><%= f.customer.tell%></td>
           </tr>
           <% end %>
         </tbody>
