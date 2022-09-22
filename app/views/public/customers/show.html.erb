@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="row">
+    <div class="text-center p-5">
+      <h1>マイページ</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-3 text-center content">
+      <div class="col-12 text-center mx-auto">
+        <h3>
+          登録情報
+          <%= link_to  "編集する", edit_public_customer_path(current_customer), class:"btn btn-success" %>
+        </h3>
+        <table class="table">
+          <tr>
+          <th>氏名</th>
+          <td><%= @customer.last_name %>
+          <%= @customer.first_name %></td>
+          </tr>
+          <tr>
+          <th>カナ</th>
+          <td><%= @customer.last_kana %>
+          <%= @customer.first_kana %></td>
+          </tr>
+          <tr>
+          <th>電話番号</th>
+          <td><%= @customer.tell %></td>
+          </tr>
+          <tr>
+          <th>メールアドレス</th>
+          <td><%= @customer.email %></td>
+          </tr>
+      </table>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-5 text-center content">
+      <div class="col-12 mt-3 text-center mx-auto">
+        <h3>予約一覧</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>予約日</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @customer_reserves.each do |customer_reserve| %>
+              <tr>
+                <td>
+                  <%= customer_reserve.day %>
+                  <%= customer_reserve.time %>              
+                </td>
+                <td>
+                  <%= link_to '削除', public_reserve_path(customer_reserve.id), method: :delete, data: { confirm: "削除してよろしいですか？", commit: "削除する", cancel: "やめる", title: "ご確認ください" } %>
+                </td>
+              </tr>             
+            <% end %>
+            <% if @customer_reserves.blank? %>
+              <tr>
+                <td>予約はありません。</td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-12 mt-5 text-center mx-auto">
+        <h3>予約履歴</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>予約日</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @visit_historys.each do |visit_history| %>
+              <tr>
+                <td>
+                  <%= visit_history.day %>
+                  <%= visit_history.time %>              
+                </td>
+              </tr>
+            <% end %>
+            <% if @visit_historys.blank? %>
+              <tr>
+                <td>予約履歴はありません。</td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+

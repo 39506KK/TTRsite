@@ -1,0 +1,68 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12 col-lg-7 offset-lg-2">
+      <h2>入力情報の確認</h2>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%#= form_with model: @customer, url: customers_sign_up_complete_path(resource), local: true do |f| %>
+          <table class="table">
+            <tr>
+              <th>姓</th>
+              <td>
+                <%= f.hidden_field :last_name %>
+                <%= @customer.last_name %>
+              </td>
+            </tr>
+            <tr>
+              <th>名</th>
+              <td>
+                <%= f.hidden_field :first_name %>
+                <%= @customer.first_name %>
+              </td>
+            </tr>
+            <tr>
+              <th>セイ</th>
+              <td>
+                <%= f.hidden_field :last_kana %>
+                <%= @customer.last_kana %>
+              </td>
+            </tr>
+            <tr>
+              <th>メイ</th>
+              <td>
+                <%= f.hidden_field :first_kana %>
+                <%= @customer.first_kana %>
+              </td>
+            </tr>
+            <tr>
+              <th>メールアドレス</th>
+              <td>
+                <%= f.hidden_field :email %>
+                <%= @customer.email %>
+              </td>
+            </tr>
+            <tr>
+              <th>電話番号</th>
+              <td>
+                <%= f.hidden_field :tell %>
+                <%= @customer.tell %>
+              </td>
+            </tr>
+            <tr>
+              <th>パスワード</th>
+              <td>
+                <%= f.hidden_field :password %>
+                <%= @password %>
+              </td>
+            </tr>
+          </table>
+          
+          <p>この内容で登録します。よろしいですか？</p>
+          
+          <div class="float-right">
+            <%= f.submit "登録する", class: 'btn btn-primary' %>
+            <%= f.submit "修正する", name: :back, class: 'btn btn-dark' %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>

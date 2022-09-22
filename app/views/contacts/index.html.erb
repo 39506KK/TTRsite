@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12 col-lg-7 offset-lg-2">
+      <h2 class="pb-3">お問い合わせ</h2>
+
+      <%= form_with model: @contact, url: contact_confirm_path, local: true do |f| %>
+        <%= render 'layouts/error_messages', model: f.object %>
+        <div class="form-group pb-3">
+          <%= f.label :name, '名前' %>
+          <span class="badge badge-info rounded-0">必須</span>
+          <%= f.text_field :name, id: 'name', class: 'form-control', autofocus: true %>
+        </div>
+        <div class="form-group pb-3">
+          <%= f.label :email, 'メールアドレス' %>
+          <span class="badge badge-info rounded-0">必須</span>
+          <small class="text-muted">例：user@example.com</small>
+          <%= f.text_field :email, id: 'email', class: 'form-control' %>
+        </div>
+        <div class="form-group pb-3">
+          <%= f.label :message, 'お問い合わせ内容' %>
+          <span class="badge badge-info rounded-0">必須</span>
+          <small class="text-muted">パスワードなどの機密情報を含めないでください。</small>
+          <%= f.text_area :message, id: 'message', class: 'form-control', :rows => '5' %>
+        </div>
+        <div class="float-right">
+          <%= f.submit '確認', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+      
+    </div>  
+  </div>  
+</div>

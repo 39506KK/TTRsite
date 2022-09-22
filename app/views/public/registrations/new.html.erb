@@ -1,29 +1,63 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "publics/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12 col-lg-7 offset-lg-2">
+      <h2>新規会員登録</h2>
+        <%= form_with model: @customer, url: customers_sign_up_confirm_path(@customer), local: true do |f| %>
+          <%= render "public/shared/error_messages", resource: resource %>
+          <div class="row mt-5 mb-4">
+            <div class="col-md-6">
+              <%= f.label :last_name, '姓' %>
+              <%= f.text_field :last_name, class: 'form-control', autofocus: true, autocomplete: "last_name" %>
+            </div>
+            <div class="col-md-6">
+              <%= f.label :first_name, '名' %>
+              <%= f.text_field :first_name,  class: 'form-control', autocomplete: "first_name" %>
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <%= f.label :last_kana, 'セイ' %>
+              <%= f.text_field :last_kana, class: 'form-control', autocomplete: "last_kana" %>
+            </div>
+            <div class="col-md-6">
+              <%= f.label :first_kana, 'カナ' %>
+              <%= f.text_field :first_kana,  class: 'form-control', autocomplete: "first_kana" %>
+            </div>
+          </div>
+          <div class="form-group mb-4">
+            <%= f.label :email, 'メールアドレス' %>
+            <small class="text-muted m-2">例：user@example.com</small>
+            <%= f.email_field :email, class: 'form-control', autocomplete: "email" %>
+          </div>
+          <div class="form-group mb-4">
+            <%= f.label :tell, '電話番号' %>
+            <small class="text-muted m-2">ハイフン(－)なし ※半角数字</small>
+            <%= f.text_field :tell, class: 'form-control', autocomplete: "tell" %>
+          </div>
+          <div class="form-group mb-4">
+            <%= f.label :password, 'パスワード' %>
+            <small class="text-muted m-2">6文字以上の半角英数字</small>
+            <%= f.password_field :password, class: 'form-control', autocomplete: "new-password" %>
+          </div>
+          <div class="form-group mb-4">
+            <%= f.label :password, 'パスワード（確認用）' %>
+            <small class="text-muted m-2">6文字以上の半角英数字</small>
+            <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "new-password" %>
+          </div>
+          <div class="float-left mb-5">
+            <%= f.submit "確認", class: "btn btn-success" %>
+          </div>
+        <% end %>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-md-12 col-lg-7 offset-lg-2">
+        <h3>既に登録済みの方</h3>
+          <%= link_to "こちら", new_customer_session_path %>からログインしてください。
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "public/shared/links" %>
+</div>
+          

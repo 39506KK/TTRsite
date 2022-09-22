@@ -1,0 +1,29 @@
+ja:
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "..."
+
+  activemodel:
+    attributes:
+      contact:
+        name: 名前
+        email: メールアドレス
+        message: お問い合わせ内容
+
+  activerecord:
+    attributes:
+      admin:
+        email: メールアドレス
+      
+      customer:
+        first_name: 姓
+        last_name: 名
+        first_kana: セイ
+        last_kana: メイ
+        tell: 電話番号
+        email: メールアドレス
+        password: パスワード
