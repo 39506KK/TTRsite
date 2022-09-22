@@ -37,4 +37,9 @@ class Reserve < ApplicationRecord
     end
     reserve_data
   end
+  
+  # def fullname
+  #   first_name + last_name
+  # end
+  
 end

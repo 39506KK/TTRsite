@@ -1,39 +1,31 @@
 <div class='container px-5 px-sm-0'>
+  <h2 class="mt-4">
+    <span>予約一覧</span>
+  </h2>
   <div class='row'>
-    <div class='col-md-10'>
-      <h2 class="mt-4">
-        <span>予約一覧</span>
-      </h2>
-      
-      <table class="table">
+    
+    <div class='col-md-8 mt-4'>
+      <table class="table text-center">
         <thead>
-          <tr class="bg-light">
-            <th>日付</th>
-            <th>時間</th>
-            <th>会員ID</th>
-            <th>氏名</th>
-            <th>フリガナ</th>
+          <tr>
+            <th>予約日</th>
+            <th>予約時間</th>
+            <th>予約者</th>
+            <th>注文ステータス</th>
           </tr>
         </thead>
         <tbody>
-          <% @customers.each do |customers| %>
-            <tr>
-              <td><%= customers.id %></td>
-              <td><u>
-                <%= link_to admin_customer_path(customers), :style=>"color:black;" do %>
-                  <%= customers.last_name %>
-                  <%= customers.first_name %>
-                <% end %>
-              </td></u>
-              <td>
-                <%= customers.last_kana %>
-                <%= customers.first_kana %>
-              </td>
-            </tr>
+          <% @reserves.each do |f| %>
+          <tr>
+            <td><%= f.day %></td>
+            <td><%= f.time %></td>
+            <td><%= f.customer_id %></td>
+            <td><%#= reserve.status_i18n %></td>
+          </tr>
           <% end %>
         </tbody>
       </table>
-      <%= paginate @customer %>
+      <%= paginate @reserves %>
     </div>
   </div>
 </div>

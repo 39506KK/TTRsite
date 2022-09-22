@@ -32,7 +32,7 @@
                   <li class ="nav-item"><%= link_to "ログアウト",  destroy_customer_session_path, method: :delete, class: 'nav-link text-dark' %></li>
                 <% elsif admin_signed_in? %>
                   <li class ="nav-item"><%= link_to "会員一覧", admin_root_path, class: 'nav-link text-dark' %></li>
-                  <li class ="nav-item">予約一覧</li>
+                  <li class ="nav-item"><%= link_to "予約一覧", admin_reserves_path, class: 'nav-link text-dark' %></li>
                   <li class ="nav-item"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link text-dark'%></li>
                 <% else %>
                   <li class ="nav-item"><%= link_to "はじめてのお客様", about_path, class: 'nav-link text-dark' %></li>

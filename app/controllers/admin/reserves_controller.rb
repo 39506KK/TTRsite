@@ -2,8 +2,8 @@ class Admin::ReservesController < ApplicationController
   before_action :authenticate_admin!
   
   def index
-    @reserves = Reserve.all
-    @reserve = Reserve.page(params[:page]).per(10)
+    #@customers = Customer.page(params[:page]).per(10)
+    @reserves = Reserve.page(params[:page]).per(10)
   end
 
   # def show
@@ -23,13 +23,13 @@ class Admin::ReservesController < ApplicationController
   #   end
   # end
   
-  private
-  def reserve_params
-    params.require(:reserve).permit(:day, :time, :customer_id, :start_time)
-  end
+  # private
+  # def reserve_params
+  #   params.require(:reserve).permit(:day, :time, :customer_id, :start_time)
+  # end
   
-  def customer_params
-    params.require(:customer).permit(:last_name, :first_name, :last_kana, :first_kana, :tell, :email)
-  end
+  # def customer_params
+  #   params.require(:customer).permit(:last_name, :first_name, :last_kana, :first_kana, :tell, :email)
+  # end
   
 end
