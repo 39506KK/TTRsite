@@ -40,7 +40,9 @@
           <% end %>
         </tbody>
       </table>
-      <%= paginate @customer %>
+      <div class="pagination justify-content-center">
+        <%= paginate @customer, theme: 'twitter-bootstrap-4' %>
+      </div>
     </div>
   </div>
 </div>

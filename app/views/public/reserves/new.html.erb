@@ -4,7 +4,7 @@
       <h1>新規予約画面</h1>
     </div>
     <div class="col-12 mt-3 content">
-      <%= form_with model: @reserve, url: public_reserves_path, local: true, class: 'form' do |form| %>
+      <%= form_with model: @reserve, url: public_reserves_path,  local: true, class: 'form' do |form| %>
       <%= render 'public/shared/error_messages', resource: @reserve %>
       <div class="day form-group">
         <%= form.label :day, '日付' %>

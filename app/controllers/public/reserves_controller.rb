@@ -1,4 +1,5 @@
 class Public::ReservesController < ApplicationController
+  before_action :authenticate_customer!
   
   def index
     @reserves = Reserve.all.where("day >= ?", Date.current).where("day < ?", Date.current >> 3).order(day: :desc)

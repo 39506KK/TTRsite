@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     patch 'customers/withdrawal/:id', to: 'customers#withdrawal', as: 'customers/withdrawal'
     get 'customers/quit', to: 'customers#quit'
     resources :customers, only:[:show, :edit, :update, :quit]
-    resources :reserves, only:[:index, :new, :show]
+    resources :reserves
   end
   
   get   'contact', to: 'contacts#index'     # 入力画面
