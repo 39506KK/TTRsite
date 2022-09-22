@@ -14,7 +14,7 @@
 
 <div class="container">
   <div class='row'>
-    <div class='col-md-10'>
+    <div class='col-md-8'>
       <%= form_with model: @customer, url: admin_customer_path(@customer), method: :patch, local: true do |f| %>
       <table class="table table-borderless">
         <tr>
@@ -23,21 +23,21 @@
         </tr>
         <tr>
           <th>氏名</th>
-          <td><%= f.text_field :last_name %></td>
-          <td><%= f.text_field :first_name %></td>
+          <td><%= f.text_field :last_name, class: 'form-control' %></td>
+          <td><%= f.text_field :first_name, class: 'form-control' %></td>
         </tr>
         <tr>
           <th>フリガナ</th>
-          <td><%= f.text_field :last_kana %></td>
-          <td><%= f.text_field :first_kana %></td>
+          <td><%= f.text_field :last_kana, class: 'form-control' %></td>
+          <td><%= f.text_field :first_kana, class: 'form-control' %></td>
         </tr>
         <tr>
           <th>電話番号</th>
-          <td><%= f.text_field :tell %></td>
+          <td><%= f.text_field :tell, class: 'form-control' %></td>
         </tr>
         <tr>
           <th>メールアドレス</th>
-          <td><%= f.text_field :email %></td>
+          <td><%= f.text_field :email, class: 'form-control' %></td>
         </tr>
         <tr>
           <th>会員ステータス</th>
