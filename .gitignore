@@ -38,8 +38,4 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-<<<<<<< HEAD
 /.env
-=======
-/.env
->>>>>>> refs/remotes/origin/develop
