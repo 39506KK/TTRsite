@@ -1,0 +1,51 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require simple_calendar
+ */
+
+.navbar {
+  background: #CCCCCC;
+  //background-image: url("/assets/body_image.jpg"); /* 背景画像 */
+}
+
+.navbar-toggler .navbar-toggler-icon {
+    /* ヘッダーハンバーガー三本線 */
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-light .navbar-toggler {
+    /* ヘッダーハンバーガー枠線 */
+  border-color: #ffffff;
+}
+
+
+body {
+  background-image: image-url("body_image.jpg"); /* 背景画像 */
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh; /* 全体枠の高さ最小値、vh=画面の大きさを基準とした単位 */
+  position: relative; /*←相対位置*/
+  padding-bottom: 120px; /*←footerの高さ*/
+  box-sizing: border-box; /*←全て含めてmin-height:100vhに*/
+}
+
+footer{
+  width: 100%; /* 幅100% */
+  text-align: center;
+  padding: 10px 0; /* 下余白 */
+  position: absolute; /* 絶対位置 */
+  bottom: 0; /* 下に固定 */
+  
+}
