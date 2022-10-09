@@ -41,6 +41,11 @@ body {
   box-sizing: border-box; /*←全て含めてmin-height:100vhに*/
 }
 
+.sized {
+  width: 100%;
+  height: 50%;
+}
+
 footer{
   width: 100%; /* 幅100% */
   text-align: center;
