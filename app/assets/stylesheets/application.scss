@@ -25,16 +25,16 @@ img.top_aicon {
   //background-image: url("/assets/body_image.jpg"); /* 背景画像 */
 }
 
-.navbar-light .navbar-toggler {
+.navbar-light .navbar-togglers {
   border-color: rgba(0, 0, 0, 0); /* ヘッダーハンバーガー外枠の線を消す */
   outline: none; /* メニューアイコン押した後の選択動作を消す */
 }
 
-.navbar-toggler .navbar-toggler-icon {
+.navbar-togglers .navbar-togglers-icon {
   background-image: none; /* 標準の画像を表示しない */
 }
 
-.navbar-toggler-icon {
+.navbar-togglers-icon {
   position: relative;
   width: 40px;
   height: 40px;
@@ -70,8 +70,8 @@ img.top_aicon {
   }
 }
 
-.navbar-toggler[aria-expanded='true'] { /* aria-expandedで開閉の制御を行っている */
-  span.navbar-toggler-icon {
+.navbar-togglers[aria-expanded='true'] { /* aria-expandedで開閉の制御を行っている */
+  span.navbar-togglers-icon {
     span {
       &:nth-of-type(1) {
         transform: translateY(12px) rotate(-45deg); /* translateY:長さ,rotate:角度 */
