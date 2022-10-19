@@ -26,12 +26,12 @@ img.top_aicon {
 }
 
 .navbar-light .navbar-toggler {
-  border-color: rgba(0, 0, 0, 0); /* ヘッダーハンバーガー外枠の線を消す */
+  border-color: rgba(0, 0, 0, 0)!important; /* ヘッダーハンバーガー外枠の線を消す */
   outline: none; /* メニューアイコン押した後の選択動作を消す */
 }
 
 .navbar-toggler .navbar-toggler-icon {
-  background-image: none; /* 標準の画像を表示しない */
+  background-image: none!important; /* 標準の画像を表示しない */
 }
 
 .navbar-toggler-icon {
@@ -58,14 +58,14 @@ img.top_aicon {
     border-radius: 1px;
 
     &:nth-of-type(1) {
-      top: 6px;
+      top: 4px;
     }
     &:nth-of-type(2) {
-      top: 19px;
+      top: 17px;
       height: 2px;
     }
     &:nth-of-type(3) {
-      top: 31px;
+      top: 30px;
       height: 2px;
     }
   }
@@ -75,13 +75,13 @@ img.top_aicon {
   span.navbar-toggler-icon {
     span {
       &:nth-of-type(1) {
-        transform: translateY(12px) rotate(-45deg); /* translateY:長さ,rotate:角度 */
+        transform: translateY(13px) rotate(-50deg); /* translateY:長さ,rotate:角度 */
       }
       &:nth-of-type(2) {
-        opacity: 0; /* opacity:消す */
+        opacity: 0; /* opacity:線を消す */
       }
       &:nth-of-type(3) {
-        transform: translateY(-12px) rotate(45deg);
+        transform: translateY(-13px) rotate(50deg);
       }
     }
   }
