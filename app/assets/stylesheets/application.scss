@@ -27,11 +27,11 @@ img.top_aicon {
 
 .navbar-light .navbar-toggler {
   border-color: rgba(0, 0, 0, 0); /* ヘッダーハンバーガー外枠の線を消す */
-  outline: none !important; /* メニューアイコン押した後の選択動作を消す */
+  outline: none; /* メニューアイコン押した後の選択動作を消す */
 }
 
 .navbar-toggler .navbar-toggler-icon {
-  background-image: none !important; /* 標準の画像を表示しない */
+  background-image: none; /* 標準の画像を表示しない */
 }
 
 .navbar-toggler-icon {
