@@ -7,7 +7,7 @@ class Customer < ApplicationRecord
   validates :last_name, :first_name, :tell, presence: true
   validates :password, presence: true, length: { minimum: 6 },
             # 英数字のみ可
-            format: { with: /\A[a-z0-9]+\z/i, message: "は英数字以外の文字を含めることはできません。" }
+            format: { with: /\A[a-z0-9]+\z/i, message: "は英数字以外の文字を含めることはできません。" }, on: create
   validates :email, presence: true,
             # 重複不可
             uniqueness: { case_sensitive: false }, 
@@ -21,7 +21,12 @@ class Customer < ApplicationRecord
             # 数字のみ可
             format: { with: /\A[0-9]+\z/i, message: "は数字以外の文字を含めることはできません。" }
   
-  has_many :reserves
+  # is_deletedがfalseならtrueを返すようにしている
+  def active_for_authentication?
+    super && (is_deleted == false)
+  end
+  
+  has_many :reserves, dependent: :destroy
   
   def full_name
     "#{first_name} #{last_name}" 
