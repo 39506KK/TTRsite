@@ -115,8 +115,9 @@ img.home_cat {
   height: 100px;
 }
 
-table, tr {
+table, tr, th {
   border-bottom: 1px solid #cbc9c9c7!important;
+  white-space: nowrap;
 }
 
 footer{
