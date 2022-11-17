@@ -120,6 +120,15 @@ table, tr, th {
   white-space: nowrap;
 }
 
+.set_center_outer {
+  text-align: center;
+}
+
+.set_center_inner {
+  display: inline-block;
+  text-align: left;
+}
+
 footer{
   width: 100%; /* 幅100% */
   text-align: center;
