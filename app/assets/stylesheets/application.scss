@@ -119,8 +119,7 @@ img.home_cat {
   height: 100px;
 }
 
-table, tr, th {
-  border-bottom: 1px solid #cbc9c9c7!important;
+table {
   white-space: nowrap;
 }
 
@@ -131,6 +130,11 @@ table, tr, th {
 .set_center_inner {
   display: inline-block;
   text-align: left;
+}
+
+.v-middle {
+  vertical-align: middle!important;
+  width: 100px;
 }
 
 footer{

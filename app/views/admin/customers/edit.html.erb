@@ -1,59 +1,52 @@
 <div class="set_center_outer">
   <div class="set_center_inner">
-    <div class="text-center p-5">
-      <h1>
-        <%= @customer.last_name %>
-        <%= @customer.first_name %>
-    　   さんの会員情報編集
-      </h1>
-    </div>
-  </div>
+    <h1>
+      <%= @customer.last_name %>
+      <%= @customer.first_name %>
+      さんの会員情報編集
+    </h1>
 
-  <div class="set_center_inner">
-    <div class='col-md-8'>
-      <%= form_with model: @customer, url: admin_customer_path(@customer), method: :patch, local: true do |f| %>
-      <table class="table table-borderless">
-        <tr>
-          <th>会員ID</th>
-          <td><%= @customer.id %></td>
-        </tr>
-        <tr>
-          <th>氏名</th>
-          <td><%= f.text_field :last_name, class: 'form-control' %></td>
-          <td><%= f.text_field :first_name, class: 'form-control' %></td>
-        </tr>
-        <tr>
-          <th>フリガナ</th>
-          <td><%= f.text_field :last_kana, class: 'form-control' %></td>
-          <td><%= f.text_field :first_kana, class: 'form-control' %></td>
-        </tr>
-        <tr>
-          <th>電話番号</th>
-          <td><%= f.text_field :tell, class: 'form-control' %></td>
-        </tr>
-        <tr>
-          <th>メールアドレス</th>
-          <td><%= f.text_field :email, class: 'form-control' %></td>
-        </tr>
-        <tr>
-          <th>会員ステータス</th>
-          <td class="pl-4">
-            <%= f.radio_button :is_deleted, false %>
-            <%= f.label :is_deleted, '有効' %>
-            <%= f.radio_button :is_deleted, true %>
-            <%= f.label :is_deleted, '退会' %>
-          </td>
-        </tr>
-        <tr>
-          <th></th>
-          <td>
-            <%= f.submit "変更を保存", class: "btn  btn-lg btn-success" %>
-          </td>
-        </tr>
+    <%= form_with model: @customer, url: admin_customer_path(@customer), method: :patch, local: true do |f| %>
+    <table class="table">
+      <tr>
+        <th class="v-middle">会員ID</th>
+        <td><%= @customer.id %></td>
+      </tr>
+      <tr>
+        <th class="v-middle">氏名</th>
+        <td><%= f.text_field :last_name, class: 'form-control' %></td>
+        <td><%= f.text_field :first_name, class: 'form-control' %></td>
+      </tr>
+      <tr>
+        <th class="v-middle">フリガナ</th>
+        <td><%= f.text_field :last_kana, class: 'form-control' %></td>
+        <td><%= f.text_field :first_kana, class: 'form-control' %></td>
+      </tr>
+      <tr>
+        <th class="v-middle">電話番号</th>
+        <td><%= f.text_field :tell, class: 'form-control' %></td>
+      </tr>
+      <tr>
+        <th class="v-middle">メールアドレス</th>
+        <td><%= f.text_field :email, class: 'form-control' %></td>
+      </tr>
+      <tr>
+        <th class="v-middle">会員ステータス</th>
+        <td class="pl-4">
+          <%= f.radio_button :is_deleted, false %>
+          <%= f.label :is_deleted, '有効' %>
+          <%= f.radio_button :is_deleted, true %>
+          <%= f.label :is_deleted, '退会' %>
+        </td>
+      </tr>
+      <tr>
+        <th></th>
+        <td>
+          <%= f.submit "変更を保存", class: "btn  btn-lg btn-success" %>
+        </td>
+      </tr>
         
-      </table>
-      <% end %>
-    </div>
-  </div>
+    </table>
+    <% end %>
   </div>
 </div>
